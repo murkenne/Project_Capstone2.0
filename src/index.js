@@ -1,10 +1,23 @@
-import React from 'react'
-import { createRoot } from 'react-dom/client'
-import App from './components/App.js'
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import './index.css'; // Adjust the path based on your directory structure
+import App from './App.js';
+import ProductProvider from './contexts/ProductContext';
+import CartProvider from './contexts/CartContext';
+import SidebarProvider from './contexts/SidebarContexts';
+//sidebar provider
 
-// place css in the src/style directory, and import them like this:
-import './style/index.css'
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
 
-const root = document.getElementById('root')
-const app = createRoot(root)
-app.render(<App />)
+  <SidebarProvider>
+    <CartProvider>
+  <ProductProvider>
+    <React.StrictMode>
+    <App />
+  </React.StrictMode>
+  </ProductProvider>
+  </CartProvider>
+  </SidebarProvider>
+);
+
