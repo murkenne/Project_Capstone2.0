@@ -1,10 +1,14 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+//import cart context
+import { CartContext } from '../contexts/CartContext';
 
 const Product = ({product}) => {
-    console.log(product)
+    const { addToCart } = useContext(CartContext);
+  //destructure product
     const { id, image, category, title, price } = product;
-   return <div>
+   return (
+     <div>
     <div className='picture'>
         <div className='picture-container'>
             {/* image*/}
@@ -14,7 +18,7 @@ const Product = ({product}) => {
         </div>
         {/* button*/}
         <div className='add-cart'>
-            <button className='plus-btn'>+</button>
+            <button onClick={() => addToCart(product, id) } className='plus-btn'>+</button>
             <Link to={`/product/${id}`} className="details">?</Link>
             </div>
         </div>
@@ -25,8 +29,8 @@ const Product = ({product}) => {
     
         <div className='price'>$ {price}</div>
     </div>
-   </div>;
-
+   </div>
+   )
 };
 
 export default Product;

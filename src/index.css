@@ -93,7 +93,7 @@
   padding: 0.5rem; 
 }
 
-button.plus-btn {
+button.plus-btn {/* add to cart*/
   cursor: pointer;
   background-color: green;
   transition: background-color 0.3s ease; /* This will make the color transition smoother */
@@ -103,7 +103,7 @@ button.plus-btn:hover {
   background-color: lightgreen; /* This is the color the button will change to on hover */
 }
 
-.details {
+.details { /* details button*/
   width: 2rem;
   height: 2rem;
   text-decoration: none;
@@ -113,6 +113,11 @@ button.plus-btn:hover {
   align-items: center;
   color: black; /* updated color */
   box-shadow: 0 0 30px rgba(0, 0, 0, 0.15);
+  transition: background-color 0.3s ease; /* This will make the color transition smoother */
+}
+
+.details:hover {
+  background-color: blue; /* hover effect color */
 }
 
 .title {/*font-semibold mb-1*/
@@ -176,12 +181,27 @@ button.plus-btn:hover {
   align-items: center;
   justify-content: center;
   width: 50px;
-  height: 50px;
+  height: 30px;
   background-color: #f8f9fa;
   border: none;
   border-radius: 50%;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
   transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.item-total {
+  background-color: #f00; /* bg-red-500 */
+  position: absolute;
+  left: 60px; /* 50px (width of .open-close) + 10px (gap) */
+  top: 0px;
+  font-size: 12px; /* text-[12px] */
+  width: 24px; /* w-[18px] */
+  height: 24px; /* h-[18px] */
+  color: #fff; /* text-white */
+  border-radius: 50%; /* rounded-full */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 
@@ -211,4 +231,165 @@ button.plus-btn:hover {
 
 .the-head {
   background-color: lightblue;
+}
+
+.sidebar-overseer {
+  display: flex; /* flex */
+  gap: 0 1rem; /* gap-x-4, this assumes a 4 unit gap equals 1rem, adjust as necessary */
+  padding: 0.5rem 1.5rem; /* py-2 lg:px-6, 0.5rem for py-2, and 1.5rem for lg:px-6, adjust based on your framework's spacing scale */
+  border-bottom: 1px solid #E5E7EB; /* border-b border-gray-200, #E5E7EB is a representation of gray-200 in default Tailwind CSS, adjust as necessary */
+  width: 100%; /* w-full */
+  font-weight: 300; /* font-light, assuming 300 is the light font weight in your project */
+  color: #6B7280; /* text-gray-500, #6B7280 is a representation of gray-500 in default Tailwind CSS, adjust as necessary */
+}
+
+
+.sidebar-image { /*w-full min-h-[150px]*/
+  width: 100%;
+  min-height: 150px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.cart-image { /*img max-w-[80px]*/
+  max-width: 80px;
+}
+
+.item-title {
+  font-size: 0.875rem; /* Equivalent to text-sm in Tailwind */
+  text-transform: uppercase;
+  font-weight: 500; /* Equivalent to font-medium in Tailwind */
+  max-width: 240px;
+  text-decoration: none;
+  color: black; /* Here, setting color directly as black */
+  /* text-primary would be a custom class, so I'm leaving it as a comment since I cannot provide the exact color value */
+  /* color: var(--text-primary); */
+}
+.item-title:hover {
+  text-decoration: underline; /* Equivalent to hover:underline in Tailwind */
+}
+
+.remove-x button {
+  font-size: 1rem; /* Adjust font size as necessary */
+  font-weight: bold; /* Makes the 'X' bolder */
+  background-color: transparent; /* Removes the default button background */
+  border: none; /* Removes the default button border */
+  color: gray; /* Sets the color of the 'X' */
+  cursor: pointer; /* Changes cursor to pointer on hover */
+  display: flex;
+  
+}
+
+.remove-x button:hover {
+  color: #ff0000; /* Changes the color of the 'X' on hover */
+}
+
+.remove-x button:focus {
+  outline: none; /* Removes the default focus outline */
+}
+
+.sidebar-square { /*cart item*/
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-bottom: 0.5rem; /* Adjust as necessary depending on the framework's spacing scale */
+}
+
+.boxes { /*cart item*/
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem; /* Adjust as necessary depending on the framework's spacing scale */
+}
+
+.tally-cart {
+  display: flex;
+  gap: 0 0.5rem; /* gap-x-2 generally represents a horizontal gap of 0.5rem in Tailwind CSS, adjust as necessary */
+  height: 36px;
+  font-size: 0.875rem; /* Equivalent to text-sm in Tailwind CSS */
+}
+.reduce {
+  display: flex;
+  flex: 1;
+  max-width: 100px; /* This is a representation of blue-400 in Tailwind CSS by default, replace it with the exact color if different */
+  align-items: center;
+  height: 100%;
+  border: 1px solid; /* Added a 1px solid border, modify as needed */
+  color: var(--text-primary); /* Replace with the actual primary color code from your project */
+  font-weight: 500; /* Equivalent to font-medium in Tailwind CSS */
+}
+
+.reduce-button {/* minus button in cart items*/
+  height: 100%;
+  cursor: pointer;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center
+}
+
+.add-button {/* add button in cart items*/
+  height: 100%;
+  cursor: pointer;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center
+
+}
+
+.amount {/* cart item*/
+  height: 100%; /* h-full */
+  display: flex; /* flex */
+  justify-content: center; /* justify-center */
+  align-items: center; /* items-center */
+  padding-left: 0.5rem; /* px-2 */
+  padding-right: 0.5rem; /* px-2 */
+}
+
+.side-price { /*cart item*/
+  flex: 1; /* flex-1 */
+  display: flex; /* flex */
+  justify-content: flex-end; /* justify-end */
+  align-items: center; /* items-center */
+  color: black; /* [black]text-primary, assuming it means primary text color, replace with your actual color variable */
+  font-weight: 500; /* font-medium, generally equivalent to a font-weight of 500 */
+}
+
+.the-price { /*cart item price*/
+  flex: 1; /* flex-1 */
+  display: flex; /* flex */
+  align-items: center; /* items-center */
+  justify-content: space-around; /* justify-around */
+}
+
+.clear-cart button {/* sidebar.js*/
+  cursor: pointer; /* cursor-pointer */
+  background-color: #f56565; /* bg-red-500 (hex code may vary, confirm from your framework documentation) */
+  color: black; /* text-white */
+  }
+
+  .total-box { /*sidebar.js*/
+  display: flex; /* flex */
+  width: 100%; /* w-full */
+  justify-content: space-between; /* justify-between */
+  align-items: center; /* items-center */
+}
+
+.total-container { /* sidebar.js*/
+  display: flex; /* flex */
+  flex-direction: column; /* flex-col */
+  gap: 0.75rem; /* gap-y-3 (assuming 1 unit equals 0.25rem, adjust if necessary) */
+  padding: 2rem 0; /* py-4 (assuming 1 unit equals 0.5rem, adjust if necessary) */
+  margin-top: 1rem; /* mt-4 (assuming 1 unit equals 0.25rem, adjust if necessary) */
+}
+
+.total-bottom { /* sidebar.js*/
+  text-transform: uppercase; /* uppercase */
+  font-weight: 600; /* font-semibold */
+}
+
+.spun { /* sidebar.js*/
+  margin-right: 0.5rem; /* mr-2 (assuming 1 unit equals 0.25rem, adjust if necessary) */
 }
