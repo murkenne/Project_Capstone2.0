@@ -174,7 +174,7 @@ button.plus-btn:hover {
   }
 }
 
-.open-close {
+/*.open-close {
   display: flex;
   position: relative;
   cursor: pointer;
@@ -187,22 +187,29 @@ button.plus-btn:hover {
   border-radius: 50%;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
   transition: background-color 0.3s, box-shadow 0.3s;
+}*/
+
+.my-cart {/*cart logo header.js*/ 
+    color: red;
+    font-size: 24px;
+    cursor: pointer;
 }
 
 .item-total {
   background-color: #f00; /* bg-red-500 */
   position: absolute;
   left: 60px; /* 50px (width of .open-close) + 10px (gap) */
-  top: 0px;
+  top: 20px; /* Increased from 0px to 20px to move the item down */
   font-size: 12px; /* text-[12px] */
-  width: 24px; /* w-[18px] */
-  height: 24px; /* h-[18px] */
+  width: 34px; /* w-[18px] */
+  height: 34px; /* h-[18px] */
   color: #fff; /* text-white */
-  border-radius: 50%; /* rounded-full */
+  border-radius: 35%; /* rounded-full */
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
 
 
 .flex {
@@ -230,13 +237,18 @@ button.plus-btn:hover {
 }
 
 .the-head {
-  background-color: lightblue;
+  background-color: #93c5fd;
+  height: 150px; /* Adjust as necessary to increase the height */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* This will vertically center the contents */
+  position: relative; /* This makes it a point of reference for absolutely positioned child elements */
 }
+
 
 .sidebar-overseer {
   display: flex; /* flex */
   gap: 0 1rem; /* gap-x-4, this assumes a 4 unit gap equals 1rem, adjust as necessary */
-  padding: 0.5rem 1.5rem; /* py-2 lg:px-6, 0.5rem for py-2, and 1.5rem for lg:px-6, adjust based on your framework's spacing scale */
   border-bottom: 1px solid #E5E7EB; /* border-b border-gray-200, #E5E7EB is a representation of gray-200 in default Tailwind CSS, adjust as necessary */
   width: 100%; /* w-full */
   font-weight: 300; /* font-light, assuming 300 is the light font weight in your project */
@@ -309,6 +321,7 @@ button.plus-btn:hover {
   height: 36px;
   font-size: 0.875rem; /* Equivalent to text-sm in Tailwind CSS */
 }
+
 .reduce {
   display: flex;
   flex: 1;
@@ -366,9 +379,14 @@ button.plus-btn:hover {
 
 .clear-cart button {/* sidebar.js*/
   cursor: pointer; /* cursor-pointer */
-  background-color: #f56565; /* bg-red-500 (hex code may vary, confirm from your framework documentation) */
+  background-color: white; /* bg-red-500 (hex code may vary, confirm from your framework documentation) */
   color: black; /* text-white */
   }
+.trashcan { /*sidebar.js*/
+    
+     color: red;
+     cursor: pointer;
+}
 
   .total-box { /*sidebar.js*/
   display: flex; /* flex */
@@ -392,4 +410,163 @@ button.plus-btn:hover {
 
 .spun { /* sidebar.js*/
   margin-right: 0.5rem; /* mr-2 (assuming 1 unit equals 0.25rem, adjust if necessary) */
+}
+
+.cart-spectrum {/*sidebar.js*/
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  height: 520px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  border-bottom: 1px solid; /* Add your preferred color here */
+}
+
+@media (min-width: 1024px) {
+  .cart-spectrum {
+    height: 380px;
+  }
+}
+
+.cart-view {
+  background-color: #f0f0f0; /* bg-gray-200 */
+  text-decoration: none;
+  display: flex;
+  padding: 4px; /* p-4 */
+  justify-content: center;
+  align-items: center;
+  color: black; /* text-primary (assuming primary is black in your setup) */
+  width: 100%; /* w-full */
+  font-weight: 500; /* font-medium */
+}
+
+.checkout {
+  background-color: black; /* bg-gray-200 */
+  text-decoration: none;
+  display: flex;
+  padding: 4px; /* p-4 */
+  justify-content: center;
+  align-items: center;
+  color: white; /* text-primary (assuming primary is black in your setup) */
+  width: 100%; /* w-full */
+  font-weight: 500; /* font-medium */
+}
+
+.footer {
+  background-color: black; /* bg-primary (assuming primary is black in your setup) */
+  padding-top: 3rem; /* py-12 (padding-top and padding-bottom of 12 units, assuming 1 unit = 0.25rem) */
+  padding-bottom: 3rem;
+}
+
+.container {
+  max-width: 100%; /* mx-auto (centering the container by setting max width to 100% and using auto margin on both sides) */
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.copyright {
+  color: black; /* text-white */
+  text-align: center; /* text-center */
+}
+
+.loading {
+  height: 100vh; /* Equivalent to h-screen in Tailwind */
+  display: flex; /* Equivalent to flex in Tailwind */
+  justify-content: center; /* Equivalent to justify-center in Tailwind */
+  align-items: center; /* Equivalent to items-center in Tailwind */
+}
+
+.screen {
+  padding-top: 8rem; /* Equivalent to pt-32 in Tailwind (32 / 4 = 8rem) */
+  padding-bottom: 3rem; /* Equivalent to pb-12 in Tailwind (12 / 4 = 3rem) */
+  height: 100vh; /* Equivalent to h-screen in Tailwind */
+
+     
+  @media (min-width: 1024px) {
+    padding-top: 8rem; 
+    padding-bottom: 8rem; 
+  }
+}
+
+.imagine {
+  width: 100%; 
+  margin-right: auto; /* Equivalent to mx-auto in Tailwind, centers the container */
+  margin-left: auto; /* Equivalent to mx-auto in Tailwind, centers the container */
+}
+
+.f-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@media (min-width: 1024px) {
+  .f-wrapper {
+    flex-direction: row;
+  }
+}
+
+.description-info {
+  max-width: 200px;
+}
+
+@media (min-width: 1024px) {
+  .description-info {
+    max-width: 24rem; /* This corresponds to 'sm' size in Tailwind's default configuration */
+  }
+}
+
+.g-wrapper {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+@media (min-width: 1024px) {
+  .g-wrapper {
+    margin-bottom: 0;
+  }
+}
+
+.text-wrapper {
+  flex: 1;
+  text-align: center;
+}
+
+@media (min-width: 1024px) {
+  .text-wrapper {
+    text-align: left;
+  }
+}
+
+.text-wrapper {
+  flex: 1;
+  text-align: center;
+}
+
+@media (min-width: 1024px) {
+  .text-wrapper {
+    text-align: left;
+  }
+}
+
+.p-price {
+  font-size: 1.25rem; /* This is equivalent to text-xl in Tailwind */
+  color: #ef4444; /* This is the hex code for text-red-500 in Tailwind */
+  font-weight: 500; /* This sets the font weight to medium */
+  margin-bottom: 1.5rem; /* This gives a margin of 1.5rem to the bottom */
+}
+.d-info {
+  margin-bottom: 2rem; /* This is equivalent to mb-8 in Tailwind */
+}
+
+.a-button {
+  background-color: black; /* This uses a custom property, you'll need to define --bg-primary in your CSS with the desired color value */
+  padding-top: 1rem; /* This is equivalent to py-4 in Tailwind */
+  padding-bottom: 1rem; /* This is equivalent to py-4 in Tailwind */
+  padding-left: 2rem; /* This is equivalent to px-8 in Tailwind */
+  padding-right: 2rem; /* This is equivalent to px-8 in Tailwind */
+  color: white; /* This sets the text color to white */
 }

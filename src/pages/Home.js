@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import './Home.css';
+//import './Home.css';
 import { ProductContext } from "../contexts/ProductContext";
 import Product from '../components/Product';
 
@@ -10,7 +10,7 @@ const Home = () => {
         <div>
             <section className="home-section">
                 <div className="home-container">
-                    <div className="home-sqaure">
+                    <div className="home-square">
                         {products.map(product => (
                             <Product product={product} key={product.id} />
                         ))}
