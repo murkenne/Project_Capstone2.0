@@ -1,6 +1,6 @@
 .picture {
   border: 1px solid #e4e4e4;
-  height: 300px;
+  height: 200px;
   margin-bottom: 1.5rem;
   position: relative;
   overflow: hidden;
@@ -10,7 +10,6 @@
   justify-content: center;
   align-items: center;
 }
-
 /*.picture-container {
   width: 100%;
   height: 100%;
@@ -143,7 +142,7 @@ button.plus-btn:hover {
   background-color: white;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
   transition: all 0.3s;
-  z-index: 20;
+  z-index: 1000; /* Updated z-index */
   padding: 0 1rem;
   width: 100%;
 }
@@ -174,20 +173,7 @@ button.plus-btn:hover {
   }
 }
 
-/*.open-close {
-  display: flex;
-  position: relative;
-  cursor: pointer;
-  align-items: center;
-  justify-content: center;
-  width: 50px;
-  height: 30px;
-  background-color: #f8f9fa;
-  border: none;
-  border-radius: 50%;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-  transition: background-color 0.3s, box-shadow 0.3s;
-}*/
+
 
 .my-cart {/*cart logo header.js*/ 
     color: red;
@@ -238,11 +224,16 @@ button.plus-btn:hover {
 
 .the-head {
   background-color: #93c5fd;
-  height: 150px; /* Adjust as necessary to increase the height */
+  height: 100px;
   display: flex;
   flex-direction: column;
-  justify-content: center; /* This will vertically center the contents */
-  position: relative; /* This makes it a point of reference for absolutely positioned child elements */
+  justify-content: center;
+  position: fixed; /* Makes the header fixed at the top */
+  top: 0; /* Align it to the top */
+  left: 0; /* Align it to the left */
+  width: 100%; /* Makes the header full width */
+  box-shadow: 0px 4px 2px -2px gray; /* Adds a drop shadow */
+  z-index: 500; /* Ensures the header is above other elements */
 }
 
 
@@ -477,11 +468,13 @@ button.plus-btn:hover {
 }
 
 .screen {
-  padding-top: 8rem; /* Equivalent to pt-32 in Tailwind (32 / 4 = 8rem) */
-  padding-bottom: 3rem; /* Equivalent to pb-12 in Tailwind (12 / 4 = 3rem) */
-  height: 100vh; /* Equivalent to h-screen in Tailwind */
+  padding-top: 8rem;
+  padding-bottom: 3rem;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-     
   @media (min-width: 1024px) {
     padding-top: 8rem; 
     padding-bottom: 8rem; 
@@ -489,31 +482,17 @@ button.plus-btn:hover {
 }
 
 .imagine {
-  width: 100%; 
-  margin-right: auto; /* Equivalent to mx-auto in Tailwind, centers the container */
-  margin-left: auto; /* Equivalent to mx-auto in Tailwind, centers the container */
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  box-shadow: none; /* Removing the shadow */
 }
 
 .f-wrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-
-@media (min-width: 1024px) {
-  .f-wrapper {
-    flex-direction: row;
-  }
-}
-
-.description-info {
-  max-width: 200px;
-}
-
-@media (min-width: 1024px) {
-  .description-info {
-    max-width: 24rem; /* This corresponds to 'sm' size in Tailwind's default configuration */
-  }
+  text-align: center; /* Centering the text */
 }
 
 .g-wrapper {
@@ -524,65 +503,96 @@ button.plus-btn:hover {
   margin-bottom: 2rem;
 }
 
-@media (min-width: 1024px) {
-  .g-wrapper {
-    margin-bottom: 0;
+.description-info {
+  max-width: 200px; /* Making the image a bit larger */
+
+  @media (min-width: 1024px) {
+    max-width: 150px; /* Keeping the image larger at larger screen sizes */
   }
 }
 
 .text-wrapper {
   flex: 1;
-  text-align: center;
-}
-
-@media (min-width: 1024px) {
-  .text-wrapper {
-    text-align: left;
-  }
-}
-
-.text-wrapper {
-  flex: 1;
-  text-align: center;
-}
-
-@media (min-width: 1024px) {
-  .text-wrapper {
-    text-align: left;
-  }
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centering the elements */
+  gap: 10px;
 }
 
 .p-price {
-  font-size: 1.25rem; /* This is equivalent to text-xl in Tailwind */
-  color: #ef4444; /* This is the hex code for text-red-500 in Tailwind */
-  font-weight: 500; /* This sets the font weight to medium */
-  margin-bottom: 1.5rem; /* This gives a margin of 1.5rem to the bottom */
-}
-.d-info {
-  margin-bottom: 2rem; /* This is equivalent to mb-8 in Tailwind */
+  font-size: 1.25rem;
+  color: #ef4444;
+  font-weight: 500;
 }
 
-.a-button {
-  background-color: black; /* This uses a custom property, you'll need to define --bg-primary in your CSS with the desired color value */
-  padding-top: 1rem; /* This is equivalent to py-4 in Tailwind */
-  padding-bottom: 1rem; /* This is equivalent to py-4 in Tailwind */
-  padding-left: 2rem; /* This is equivalent to px-8 in Tailwind */
-  padding-right: 2rem; /* This is equivalent to px-8 in Tailwind */
-  color: white; /* This sets the text color to white */
+.d-info {
+  margin-bottom: 2rem;
+}
+
+button.a-button {
+  background-color: black;
+  padding: 1rem 2rem;
+  color: white;
+  border: none; /* Removing the border */
+  align-self: center; /* Centering the button */
+  box-shadow: none; /* Removing the shadow */
 }
 
 .f-title {
   font-size: 26px;
   font-weight: 500;
   margin-bottom: 2px;
-  max-width: 450px;
-  margin-left: auto;
-  margin-right: auto;
 }
 
-@media (min-width: 1024px) {
-  .f-title {
-    margin-left: 0;
-    margin-right: 0;
+.addToCartButton {
+  cursor: pointer;
+  background-color: #28a745;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  transition: background-color 0.3s, box-shadow 0.3s;
+
+  &:hover {
+    background-color: #218838;
   }
+}
+
+.Search {
+  padding-top: 120px; /* Adds padding at the top to prevent it from being hidden by the fixed header */
+}
+
+.search-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px; /* Add space between items */
+}
+
+.search-list li {
+  flex: 1 1 calc(33.333% - 10px); /* Allows for three items per row with some gap in between */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center the content */
+  box-sizing: border-box;
+  padding: 10px; /* Add some padding inside each item */
+}
+
+.search-list li h2 {
+  font-size: 14px; /* Reduce the font size to make it compact */
+  margin: 5px 0; /* Add some margin to separate the title from the other content */
+  text-align: center; /* Center the text */
+  max-width: 150px; /* Limit the width to prevent it from taking up too much space */
+}
+
+.search-list li p {
+  font-size: 12px; /* Reduce the font size to make it compact */
+  margin: 5px 0; /* Add some margin to separate the text from the other content */
+  text-align: center; /* Center the text */
+  max-width: 150px; /* Limit the width to prevent it from taking up too much space */
+}
+
+.search-list li img {
+  max-width: 100px; /* Limit the width of the image */
+  max-height: 100px; /* Limit the height of the image */
+  object-fit: contain; /* Ensure the image scales properly */
 }

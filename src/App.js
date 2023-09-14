@@ -8,6 +8,7 @@ import ProductDetails from './pages/ProductDetails';
 import Sidebar from './components/Sidebar';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import Search from './components/Search';
 //import './App.css'
 
 const App = () => {
@@ -15,6 +16,7 @@ const App = () => {
   <div className='app'>
     <Router>
       <Header />
+      <Search />
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/product/:id' element={<ProductDetails />} />

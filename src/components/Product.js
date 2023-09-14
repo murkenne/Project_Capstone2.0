@@ -8,7 +8,7 @@ const Product = ({product}) => {
   //destructure product
     const { id, image, category, title, price } = product;
    return (
-     <div>
+     <div className='row-align'>
     <div className='picture'>
         <div className='picture-container'>
             {/* image*/}
