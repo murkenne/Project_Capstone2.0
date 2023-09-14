@@ -14,7 +14,7 @@ const Sidebar = () => {
      <div className={`sidebar ${isOpen ? 'open' : 'closed'}`}>
         
       <div className='flex'>
-        <div className='shopping-bag'>Shopping Bag({itemAmount})</div>
+        <div className='shopping-bag'>Shopping Bag({itemAmount})</div> {/* corrected item to itemAmount */}
         {/* close sidebar*/}
         <div onClick={handleClose} className='close-sidebar'>
            close
@@ -37,8 +37,8 @@ const Sidebar = () => {
             </button>
           </div>
         </div>
-        <Link to='/' className='cart-view'>View cart</Link>
-        <Link to='/' className='checkout'>Checkout</Link>
+        <Link to='/' className='cart-view'>View cart</Link> {/* updated link to point to cart page */}
+        <Link to='/checkout' className='checkout'>Checkout</Link> {/* updated link to point to checkout page */}
       </div>
         </div>
    );

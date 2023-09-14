@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 //import Link
 import { Link } from 'react-router-dom';
 // import cart context
+import './Checkout.css';
 import { CartContext } from '../contexts/CartContext';
 
 const CartItem = ({item}) => {

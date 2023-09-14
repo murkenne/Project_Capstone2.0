@@ -1,0 +1,92 @@
+.checkout-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  max-width: 400px;
+  margin: 0 auto;
+  font-family: 'Helvetica, sans-serif';
+}
+
+.checkout-details, .checkout-summary, .checkout-actions {
+  width: 100%;
+  margin-bottom: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+.form-group label {
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.form-group input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.checkout-summary {
+  margin-top: 20px;
+}
+
+.checkout-summary h2 {
+  margin-bottom: 10px;
+}
+
+.checkout-summary div {
+  margin-bottom: 5px;
+}
+
+.checkout-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px; /* Adds space between buttons */
+}
+
+.checkout-actions a, .checkout-actions button {
+  background-color: #007BFF;
+  border: none;
+  padding: 5px 10px; /* Reduced padding to make buttons smaller */
+  color: white;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 0.875rem; /* Reduced font size to make buttons smaller */
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.checkout-actions a:hover, .checkout-actions button:hover {
+  background-color: #0056b3;
+}
+
+.return-button {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+.return-button:hover {
+  background-color: #f5c6cb;
+}
+
+@media (max-width: 600px) {
+  .checkout-actions a, .checkout-actions button {
+    width: 100%;
+    margin: 5px 0;
+  }
+}

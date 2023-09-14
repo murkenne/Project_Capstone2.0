@@ -11,6 +11,7 @@ const Header = () => {
    
    return (
       <header className='the-head'>
+         <h1 className='store-brand'>The Fantastic Store</h1>
          <div className='banner'>
          <Link to={'/'}>
             <div>
