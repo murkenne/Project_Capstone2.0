@@ -570,3 +570,19 @@ button.plus-btn:hover {
   padding-right: 2rem; /* This is equivalent to px-8 in Tailwind */
   color: white; /* This sets the text color to white */
 }
+
+.f-title {
+  font-size: 26px;
+  font-weight: 500;
+  margin-bottom: 2px;
+  max-width: 450px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (min-width: 1024px) {
+  .f-title {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}

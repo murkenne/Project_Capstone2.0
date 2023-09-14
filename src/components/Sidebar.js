@@ -8,13 +8,13 @@ import { faTrash } from '@fortawesome/free-solid-svg-icons';
 
 const Sidebar = () => {
    const { isOpen, handleClose } = useContext(SidebarContext);
-   const { cart, clearCart, total } = useContext(CartContext);
+   const { cart, clearCart, total, itemAmount } = useContext(CartContext);
 
    return (
      <div className={`sidebar ${isOpen ? 'open' : 'closed'}`}>
         
       <div className='flex'>
-        <div className='shopping-bag'>Shopping Bag(0)</div>
+        <div className='shopping-bag'>Shopping Bag({itemAmount})</div>
         {/* close sidebar*/}
         <div onClick={handleClose} className='close-sidebar'>
            close
