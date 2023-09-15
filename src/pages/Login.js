@@ -1,24 +1,42 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
-function Login() {
+function Login({ onLoginSuccess }) {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
+
+  const navigate = useNavigate();
 
   const handleLogin = () => {
     fetch('https://fakestoreapi.com/auth/login', {
       method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
       body: JSON.stringify({
         username,
         password,
       }),
     })
     .then(res => res.json())
-    .then(json => console.log(json))
-    .catch(err => console.log(err));
+    .then(json => {
+      if(json.status === 'error') {
+        setErrorMessage('Wrong username or password');
+      } else {
+        setErrorMessage('');
+        onLoginSuccess(json); 
+        navigate('/'); // Navigates back to the main page
+      }
+    })
+    .catch(err => {
+      console.log(err);
+      setErrorMessage('An error occurred. Please try again.');
+    });
   };
 
   return (
-    <div>
+    <div className='login'>
       <h2>Login</h2>
       <input 
         type="text" 
@@ -32,6 +50,7 @@ function Login() {
         value={password} 
         onChange={(e) => setPassword(e.target.value)} 
       />
+      {errorMessage && <div style={{color: 'red'}}>{errorMessage}</div>}
       <button onClick={handleLogin}>Login</button>
     </div>
   );

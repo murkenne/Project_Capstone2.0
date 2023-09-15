@@ -2,7 +2,7 @@
   background-color: #93c5fd;
   height: 100px;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
   position: fixed; /* Makes the header fixed at the top */
   top: 0; /* Align it to the top */
@@ -12,6 +12,9 @@
   z-index: 500; /* Ensures the header is above other elements */
 }
 
+.banner{
+  display: flex;
+}
 .my-cart {/*cart logo header.js*/ 
     color: red;
     font-size: 24px;
@@ -33,3 +36,13 @@
   align-items: center;
 }
 
+/*Home icon*/
+.return-home {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.home-icon {
+  font-size: 24px; /* You can adjust the size as needed */
+}

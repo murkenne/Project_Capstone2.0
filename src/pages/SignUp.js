@@ -1,13 +1,17 @@
 import React, { useState } from 'react';
-//import './SignUp.css'
+import { useNavigate } from 'react-router-dom';
+import './SignUp.css'; 
 
 function Signup() {
   const [formData, setFormData] = useState({
+    firstName: '',
+    lastName: '',
     email: '',
-    name: '',
+    username: '',
     password: '',
-    phone: '',
   });
+
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -25,23 +29,41 @@ function Signup() {
       },
       body: JSON.stringify({
         email: formData.email,
-        username: formData.name,
+        username: formData.username,
         password: formData.password,
         name: {
-          firstname: formData.name.split(' ')[0],
-          lastname: formData.name.split(' ')[1] || '',
+          firstname: formData.firstName,
+          lastname: formData.lastName,
         },
-        phone: formData.phone,
+        // phone: formData.phone, // Removed as phone data is not in the initial state
       })
     })
     .then(res => res.json())
-    .then(json => console.log(json))
+    .then(json => {
+      console.log(json);
+      alert("Congratulations on signing up!");
+      navigate('/'); // Navigate to the main page
+    })
     .catch(err => console.log(err));
   };
 
   return (
-    <div>
+    <div className="signup-container">
       <h2>Signup</h2>
+      <input 
+        type="text" 
+        placeholder="First Name" 
+        name="firstName" 
+        value={formData.firstName} 
+        onChange={handleChange} 
+      />
+      <input 
+        type="text" 
+        placeholder="Last Name" 
+        name="lastName" 
+        value={formData.lastName} 
+        onChange={handleChange} 
+      />
       <input 
         type="email" 
         placeholder="Email" 
@@ -51,9 +73,9 @@ function Signup() {
       />
       <input 
         type="text" 
-        placeholder="Name" 
-        name="name" 
-        value={formData.name} 
+        placeholder="Username" 
+        name="username" 
+        value={formData.username} 
         onChange={handleChange} 
       />
       <input 
@@ -61,13 +83,6 @@ function Signup() {
         placeholder="Password" 
         name="password" 
         value={formData.password} 
-        onChange={handleChange} 
-      />
-      <input 
-        type="text" 
-        placeholder="Phone" 
-        name="phone" 
-        value={formData.phone} 
         onChange={handleChange} 
       />
       <button onClick={handleSubmit}>Signup</button>

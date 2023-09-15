@@ -29,38 +29,43 @@
     background-color: #218838;
   }
 }
-
 .Search {
-  padding-top: 120px; /* Adds padding at the top to prevent it from being hidden by the fixed header */
+  padding: 120px 20px 20px 20px; /* top, right, bottom, left padding */
+  max-width: 700px; /* Limits the maximum width of the search component */
+  margin: 0 auto; /* Centers the search component horizontally */
 }
+
+
 
 .search-list {
   display: flex;
   flex-wrap: wrap;
   gap: 10px; /* Add space between items */
+  justify-content: center; /* Center the items on the page */
 }
 
 .search-list li {
-  flex: 1 1 calc(33.333% - 10px); /* Allows for three items per row with some gap in between */
+  flex: 1 1 calc(33.333% - 20px); /* Allows for three items per row with some gap in between */
   display: flex;
   flex-direction: column;
   align-items: center; /* Center the content */
   box-sizing: border-box;
   padding: 10px; /* Add some padding inside each item */
+  border: 1px solid #ccc; /* Adds a border around each item */
+  border-radius: 5px; /* Rounds the corners of each item */
+  max-width: 300px; /* Limits the maximum width of each item */
 }
 
 .search-list li h2 {
   font-size: 14px; /* Reduce the font size to make it compact */
   margin: 5px 0; /* Add some margin to separate the title from the other content */
   text-align: center; /* Center the text */
-  max-width: 150px; /* Limit the width to prevent it from taking up too much space */
 }
 
 .search-list li p {
   font-size: 12px; /* Reduce the font size to make it compact */
   margin: 5px 0; /* Add some margin to separate the text from the other content */
   text-align: center; /* Center the text */
-  max-width: 150px; /* Limit the width to prevent it from taking up too much space */
 }
 
 .search-list li img {

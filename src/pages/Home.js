@@ -8,9 +8,9 @@ const Home = () => {
 
     return (
         <div>
-            <section className="home-section">
+            <section>
                 <div className="home-container">
-                    <div className="home-square">
+                    <div className="home-section">
                         {products.map(product => (
                             <Product product={product} key={product.id} />
                         ))}
