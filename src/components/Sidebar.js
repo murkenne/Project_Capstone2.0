@@ -5,6 +5,7 @@ import { SidebarContext } from '../contexts/SidebarContexts';
 import { CartContext } from '../contexts/CartContext';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
+import './Sidebar.css';
 
 const Sidebar = () => {
    const { isOpen, handleClose } = useContext(SidebarContext);

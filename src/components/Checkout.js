@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { CartContext } from '../contexts/CartContext';
 import { SidebarContext } from '../contexts/SidebarContexts'; // Import SidebarContext
 import { Link, useNavigate } from 'react-router-dom';
+import './Checkout.css';
 
 const Checkout = () => {
   const { cart, total, clearCart } = useContext(CartContext);

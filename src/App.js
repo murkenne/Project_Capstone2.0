@@ -4,7 +4,8 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 //import pages
 import Home from './pages/Home';
 import ProductDetails from './pages/ProductDetails';
-import Checkout from './components/Checkout';  // Make sure to import the Checkout component
+import Checkout from './components/Checkout';  
+import Signup from './pages/SignUp';  // Import the Signup component here
 // import components
 import Sidebar from './components/Sidebar';
 import Header from './components/Header';
@@ -21,7 +22,8 @@ const App = () => {
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/product/:id' element={<ProductDetails />} />
-        <Route path='/checkout' element={<Checkout />} />  // Here is your new route for the checkout page
+        <Route path='/checkout' element={<Checkout />} />  
+        <Route path='/signup' element={<Signup />} />  // Add a new route for the Signup page
       </Routes>
       <Sidebar />
       <Footer />

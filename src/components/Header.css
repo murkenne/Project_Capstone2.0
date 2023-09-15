@@ -1,0 +1,35 @@
+.the-head {
+  background-color: #93c5fd;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: fixed; /* Makes the header fixed at the top */
+  top: 0; /* Align it to the top */
+  left: 0; /* Align it to the left */
+  width: 100%; /* Makes the header full width */
+  box-shadow: 0px 4px 2px -2px gray; /* Adds a drop shadow */
+  z-index: 500; /* Ensures the header is above other elements */
+}
+
+.my-cart {/*cart logo header.js*/ 
+    color: red;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.item-total {
+  background-color: #f00; /* bg-red-500 */
+  position: absolute;
+  left: 60px; /* 50px (width of .open-close) + 10px (gap) */
+  top: 20px; /* Increased from 0px to 20px to move the item down */
+  font-size: 12px; /* text-[12px] */
+  width: 34px; /* w-[18px] */
+  height: 34px; /* h-[18px] */
+  color: #fff; /* text-white */
+  border-radius: 35%; /* rounded-full */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+

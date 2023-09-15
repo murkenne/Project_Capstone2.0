@@ -4,6 +4,7 @@ import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 import { SidebarContext } from '../contexts/SidebarContexts';
 import { CartContext } from '../contexts/CartContext';
 import { Link } from 'react-router-dom';
+import './Header.css';
 
 const Header = () => {
      const {isOpen, setIsOpen } = useContext(SidebarContext);
@@ -16,6 +17,12 @@ const Header = () => {
          <Link to={'/'}>
             <div>
              where my profile icon will go 
+            </div>
+         </Link>
+         {/* Adding a link to the Signup page */}
+         <Link to={'/signup'} style={{ margin: '0 10px' }}>
+            <div>
+             Signup
             </div>
          </Link>
          {/*cart*/}

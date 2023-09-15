@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { useParams } from 'react-router-dom';
 import { CartContext } from '../contexts/CartContext';
 import { ProductContext } from '../contexts/ProductContext';
+import './ProductDetails.css'
 
 const ProductDetails = () => {
     // get the product id from the url

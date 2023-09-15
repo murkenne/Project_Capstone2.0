@@ -1,0 +1,86 @@
+.loading {
+    height: 100vh; /* Equivalent to h-screen in Tailwind */
+    display: flex; /* Equivalent to flex in Tailwind */
+    justify-content: center; /* Equivalent to justify-center in Tailwind */
+    align-items: center; /* Equivalent to items-center in Tailwind */
+  }
+  
+  .screen {
+    padding-top: 8rem;
+    padding-bottom: 3rem;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+    @media (min-width: 1024px) {
+      padding-top: 8rem; 
+      padding-bottom: 8rem; 
+    }
+  }
+  
+  .imagine {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    box-shadow: none; /* Removing the shadow */
+  }
+  
+  .f-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center; /* Centering the text */
+  }
+  
+  .g-wrapper {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2rem;
+  }
+  
+  .description-info {
+    max-width: 200px; /* Making the image a bit larger */
+  
+    @media (min-width: 1024px) {
+      max-width: 150px; /* Keeping the image larger at larger screen sizes */
+    }
+  }
+  
+  
+  .text-wrapper {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centering the elements */
+    gap: 10px;
+  }
+  
+  .p-price {
+    font-size: 1.25rem;
+    color: #ef4444;
+    font-weight: 500;
+  }
+  
+  .d-info {
+    margin-bottom: 2rem;
+  }
+  
+  button.a-button {
+    background-color: black;
+    padding: 1rem 2rem;
+    color: white;
+    border: none; /* Removing the border */
+    align-self: center; /* Centering the button */
+    box-shadow: none; /* Removing the shadow */
+  }
+  
+  .f-title {
+    font-size: 26px;
+    font-weight: 500;
+    margin-bottom: 2px;
+  }
+  
+  
