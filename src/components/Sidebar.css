@@ -89,6 +89,7 @@
   }
   
   .total-bottom { /* sidebar.js*/
+    padding: 0%;
     text-transform: uppercase; /* uppercase */
     font-weight: 600; /* font-semibold */
   }
@@ -117,7 +118,7 @@
     background-color: #f0f0f0; /* bg-gray-200 */
     text-decoration: none;
     display: flex;
-    padding: 4px; /* p-4 */
+    padding: 0px; /* p-4 */
     justify-content: center;
     align-items: center;
     color: black; /* text-primary (assuming primary is black in your setup) */

@@ -45,6 +45,11 @@
   }
   
   button.plus-btn {/* add to cart*/
+     width: 2rem;
+    height: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     cursor: pointer;
     background-color: green;
     transition: background-color 0.3s ease; /* This will make the color transition smoother */
@@ -76,6 +81,7 @@
     margin-bottom: 0.25rem;
     text-decoration: none;
   }
+
   .category { /* text-sm capitalize text-gray-500*/
     font-size: 0.875rem; /* text-sm: Small text size */
     text-transform: capitalize; /* capitalize: Capitalizes the first letter of each word */

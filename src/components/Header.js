@@ -19,9 +19,11 @@ const Header = ({ currentUser, onLogout }) => {
             <FontAwesomeIcon icon={faHouseChimney} className='home-icon' />
           </div>
         </Link>
-        <Link to={'/signup'} style={{ margin: '0 10px' }}>
-          <div>Signup</div>
-        </Link>
+        {!currentUser && (
+          <Link to={'/signup'} style={{ margin: '0 10px' }}>
+            <div>Signup</div>
+          </Link>
+        )}
         <div onClick={() => setIsOpen(!isOpen)}>
           <FontAwesomeIcon icon={faShoppingCart} className='my-cart' />
           <div className='item-total'>{itemAmount}</div>
