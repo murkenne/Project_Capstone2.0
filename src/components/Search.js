@@ -48,7 +48,7 @@ function Search() {
     <div className="Search">
       <input
         type="text"
-        placeholder="Search category..."
+        placeholder="Search men's/women's/jewelry/electronics categories..."
         value={searchTerm}
         onChange={(e) => setSearchTerm(e.target.value)}
       />
