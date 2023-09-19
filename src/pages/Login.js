@@ -1,6 +1,7 @@
-import React, { useState, useEffect, useContext } from 'react'; // Added useContext
+import React, { useState, useEffect, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { CartContext } from '../contexts/CartContext'; // Adjust the path to your actual CartContext file location
+import { CartContext } from '../contexts/CartContext'; 
+import { UserContext } from '../contexts/UserContext'; // Import UserContext
 
 function Login({ onLoginSuccess }) {
   const [username, setUsername] = useState('');
@@ -9,35 +10,36 @@ function Login({ onLoginSuccess }) {
   const [userData, setUserData] = useState(null);
 
   const navigate = useNavigate();
-  const { setCart } = useContext(CartContext); // Added this line to get the setCart method from your context
+  const { setCart } = useContext(CartContext); 
+  const { setIsLoggedIn } = useContext(UserContext); // Get the setIsLoggedIn method from UserContext
 
   useEffect(() => {
-  const fetchUserData = async () => {
-    try {
-      const response = await fetch('https://fakestoreapi.com/users/1');
-      if (!response.ok) {
-        throw new Error('Network response was not ok ' + response.statusText);
+    const fetchUserData = async () => {
+      try {
+        const response = await fetch('https://fakestoreapi.com/users/1');
+        if (!response.ok) {
+          throw new Error('Network response was not ok ' + response.statusText);
+        }
+        const data = await response.json();
+        setUserData(data);
+      } catch (error) {
+        console.error(error);
       }
-      const data = await response.json();
-      setUserData(data);
-    } catch (error) {
-      console.error(error);
-    }
-  };
+    };
 
-  fetchUserData();
-}, []);
-
+    fetchUserData();
+  }, []);
 
   const handleLogin = async () => {
     try {
       if (username === userData?.username && password === userData?.password) {
         setErrorMessage('');
+        setIsLoggedIn(true); // Set isLoggedIn to true on successful login
         onLoginSuccess({ username: userData.username, id: userData.id });
         navigate('/');
 
         const userCart = JSON.parse(localStorage.getItem(`userCart_${userData.id}`)) || [];
-        setCart(userCart); // Updated this line to use setCart instead of setCartItems
+        setCart(userCart);
       } else {
         setErrorMessage('Wrong username or password');
       }
