@@ -11,6 +11,18 @@
     justify-content: center;
     align-items: center;
   }
+
+  .row-align {
+    box-shadow: 1px 1px 5px;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    transition: transform 0.3s;
+  }
+
+   .row-align:hover {
+     transform: scale(1.1); /* Slightly enlarges the link on hover */
+     text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3); /* Adds a shadow to the text for a lifting effect */
+  }
   /*.picture-container {
     width: 100%;
     height: 100%;
@@ -40,15 +52,24 @@
     position: absolute;
     top: 0;
     right: 0;
-    background-color: #f56565;
+    background-color: white;
     padding: 0.5rem; 
+    opacity: 0%;
   }
-  
+  .add-cart:hover {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: white;
+    padding: 0.5rem; 
+    opacity: 100%;
+  }
+
   button.plus-btn {/* add to cart*/
      width: 2rem;
     height: 2rem;
     display: flex;
-    border-radius: 30%;
+    border-radius: 60%;
     justify-content: center;
     align-items: center;
     cursor: pointer;

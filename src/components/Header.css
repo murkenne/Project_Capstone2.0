@@ -16,21 +16,27 @@
   display: flex;
 }
 .my-cart {/*cart logo header.js*/ 
-    color: red;
+    color:blue;
     font-size: 24px;
     cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.my-cart:hover {
+  transform: scale(1.14); /* Slightly enlarges the link on hover */
+  text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3); /* Adds a shadow to the text for a lifting effect */
 }
 
 .item-total {
-  background-color: #f00; /* bg-red-500 */
+  background-color: red; 
   position: absolute;
-  left: 60px; /* 50px (width of .open-close) + 10px (gap) */
-  top: 20px; /* Increased from 0px to 20px to move the item down */
-  font-size: 12px; /* text-[12px] */
-  width: 34px; /* w-[18px] */
-  height: 34px; /* h-[18px] */
-  color: #fff; /* text-white */
-  border-radius: 35%; /* rounded-full */
+  left: 60px; 
+  top: 20px; 
+  font-size: 12px;
+  width: 34px; 
+  height: 34px; 
+  color: #fff;
+  border-radius: 35%; 
   display: flex;
   justify-content: center;
   align-items: center;
@@ -44,9 +50,73 @@
 }
 
 .home-icon {
-  font-size: 24px; /* You can adjust the size as needed */
+  font-size: 24px; 
 }
 
 .store-brand {
-  text-decoration: none;
+  color: blue; 
+  text-decoration: none; 
+  font-size: 2em; 
+  font-weight: bold; /* Set the font weight */
+  /* Add any other styles you want */
+}
+
+.store-brand:hover {
+  color: blue; /* Set the color of the text on hover */
+}
+
+.store-brand:active {
+  color: red; /* Set the color of the text when active */
+}
+
+.store-brand:visited {
+  color: blue; /* Set the color of the text when visited */
+}
+/* cool effect*/
+.store-brand-link {
+  text-decoration: none; 
+  color: blue; 
+   transition: transform 0.3s;
+}
+
+.store-brand-link:hover {
+  transform: scale(1.05); /* Slightly enlarges the link on hover */
+  text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3); /* Adds a shadow to the text for a lifting effect */
+}
+
+.signup-link,
+.login-link {
+  text-decoration: none; /* Remove the underline from the link */
+  margin: 0 10px; /* Add some margin around the links */
+  transition: transform 0.3s;
+}
+
+.signup-text,
+.login-text {
+  color: blue; /* Set the text color to a dark shade */
+  font-weight: bold; /* Make the text bold */
+  cursor: pointer; /* Change cursor to pointer when hovered */
+  transition: transform 0.3s;
+}
+
+.signup-text:hover,
+.login-text:hover {
+   transform: scale(1.05); /* Slightly enlarges the link on hover */
+  text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3); /* Adds a shadow to the text for a lifting effect */
+  color: green; /* Change color to orange when hovered */
+}
+
+.logout-button {
+  background-color: blue; 
+  border: none; 
+  padding: 3px 8px; /* Reduced padding to make the button smaller */
+  margin-right: -20px; /* Negative margin to move the button to the right */
+  cursor: pointer;
+  color: white; 
+  font-weight: bold; 
+}
+
+
+.logout-button:hover {
+  background-color: #e07b00; 
 }

@@ -13,15 +13,15 @@ const Header = ({ currentUser, onLogout }) => {
   return (
     <header className='the-head'>
       <div className='banner'>
-        <Link to={'/'}>
+        <Link to={'/'} className='store-brand-link'>
           <h1 className='store-brand'>The Fantastic Store</h1>
           <div className='return-home'>
             <FontAwesomeIcon icon={faHouseChimney} className='home-icon' />
           </div>
         </Link>
         {!currentUser && (
-          <Link to={'/signup'} style={{ margin: '0 10px' }}>
-            <div>Signup</div>
+          <Link to={'/signup'} className='signup-link' style={{ margin: '0 10px' }}>
+            <div className='signup-text'>Signup</div>
           </Link>
         )}
         <div onClick={() => setIsOpen(!isOpen)}>
@@ -29,13 +29,15 @@ const Header = ({ currentUser, onLogout }) => {
           <div className='item-total'>{itemAmount}</div>
         </div>
         
-        {currentUser ? (
+         {currentUser ? (
           <div className='user-info'>
-            <span>Welcome, {currentUser.username}</span>
-            <button onClick={onLogout}>Logout</button>
+            <span className='welcome-text'>Welcome, {currentUser.username}</span>
+            <button onClick={onLogout} className='logout-button'>Logout</button>
           </div>
         ) : (
-          <Link to="/login">Login</Link>
+          <Link to="/login" className='login-link'>
+            <div className='login-text'>Login</div>
+          </Link>
         )}
       </div>
     </header>

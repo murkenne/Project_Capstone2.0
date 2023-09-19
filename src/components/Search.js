@@ -5,7 +5,7 @@ function Search() {
   const [categories, setCategories] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
   const [products, setProducts] = useState([]);
-  const [filteredProducts, setFilteredProducts] = useState([]); // New state to store the filtered products
+  const [filteredProducts, setFilteredProducts] = useState([]); 
   const { addToCart } = useContext(CartContext);
 
   // Fetch categories on component mount
@@ -40,7 +40,7 @@ function Search() {
         product.title.toLowerCase().includes(searchTerm.toLowerCase())
       ));
     } else {
-      setFilteredProducts(products); // If the search term is too short, display all products
+      setFilteredProducts(products); 
     }
   }, [searchTerm, products]);
 
