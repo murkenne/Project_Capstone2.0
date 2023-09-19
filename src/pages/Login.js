@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react'; // Added useContext
 import { useNavigate } from 'react-router-dom';
+import { CartContext } from '../contexts/CartContext'; // Adjust the path to your actual CartContext file location
 
 function Login({ onLoginSuccess }) {
   const [username, setUsername] = useState('');
@@ -8,30 +9,40 @@ function Login({ onLoginSuccess }) {
   const [userData, setUserData] = useState(null);
 
   const navigate = useNavigate();
+  const { setCart } = useContext(CartContext); // Added this line to get the setCart method from your context
 
   useEffect(() => {
-    fetch('https://fakestoreapi.com/users/1')
-      .then(res => res.json())
-      .then(json => setUserData(json))
-      .catch(err => console.log(err));
-  }, []);
+  const fetchUserData = async () => {
+    try {
+      const response = await fetch('https://fakestoreapi.com/users/1');
+      if (!response.ok) {
+        throw new Error('Network response was not ok ' + response.statusText);
+      }
+      const data = await response.json();
+      setUserData(data);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  fetchUserData();
+}, []);
+
 
   const handleLogin = async () => {
     try {
       if (username === userData?.username && password === userData?.password) {
         setErrorMessage('');
-        onLoginSuccess({ username: userData.username, id: userData.id }); // Including id as well for local storage key
-        navigate('/'); // Navigates back to the main page
+        onLoginSuccess({ username: userData.username, id: userData.id });
+        navigate('/');
 
-        // Here we retrieve the user's cart from local storage
         const userCart = JSON.parse(localStorage.getItem(`userCart_${userData.id}`)) || [];
-        setCartItems(userCart); // Assuming setCartItems is obtained from CartContext or another method to update cart items
+        setCart(userCart); // Updated this line to use setCart instead of setCartItems
       } else {
         setErrorMessage('Wrong username or password');
       }
     } catch (error) {
       console.error('Error logging in:', error);
-      // Handle error here (you might set an error message to state to display to the user)
     }
   };
 
