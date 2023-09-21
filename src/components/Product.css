@@ -20,7 +20,7 @@
   }
 
    .row-align:hover {
-     transform: scale(1.1); /* Slightly enlarges the link on hover */
+     transform: scale(1.1); 
      text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3); /* Adds a shadow to the text for a lifting effect */
   }
 
@@ -54,7 +54,7 @@
   }
   
    .crop-picture:hover {
-     transform: scale(1.1); /* Slightly enlarges the link on hover */
+     transform: scale(1.1);
      text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3); /* Adds a shadow to the text for a lifting effect */
    }
 
@@ -110,11 +110,11 @@
     align-items: center;
     color: black; /* updated color */
     box-shadow: 0 0 30px rgba(0, 0, 0, 0.15);
-    transition: background-color 0.3s ease; /* This will make the color transition smoother */
+    transition: background-color 0.3s ease; 
   }
   
   .details:hover {
-    background-color: blue; /* hover effect color */
+    background-color: blue; 
   }
   
   .title {/*font-semibold mb-1*/
@@ -123,14 +123,14 @@
     text-decoration: none;
   }
 
-  .category { /* text-sm capitalize text-gray-500*/
-    font-size: 0.875rem; /* text-sm: Small text size */
-    text-transform: capitalize; /* capitalize: Capitalizes the first letter of each word */
-    color: #718096; /* text-gray-500: Gray text color (based on Tailwind CSS gray palette) */
-    margin-bottom: 0.25rem; /* mb-1: Small margin at the bottom (based on Tailwind CSS spacing scale) */
+  .category { 
+    font-size: 0.875rem; 
+    text-transform: capitalize; 
+    color: #718096; 
+    margin-bottom: 0.25rem; 
   }
-  
+
   .price {
-    font-weight: 600; /* semibold */
+    font-weight: 600; 
   }
   

@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext } from 'react';
-import { CartContext } from '../contexts/CartContext'; // Adjust the path as necessary
+import { CartContext } from '../contexts/CartContext'; 
 
 function Search() {
   const [categories, setCategories] = useState([]);

@@ -30,9 +30,9 @@
   }
 }
 .Search {
-  padding: 120px 20px 20px 20px; /* top, right, bottom, left padding */
-  max-width: 700px; /* Limits the maximum width of the search component */
-  margin: 0 auto; /* Centers the search component horizontally */
+  padding: 120px 20px 20px 20px; 
+  max-width: 700px; 
+  margin: 0 auto; 
 }
 
 

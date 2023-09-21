@@ -35,7 +35,7 @@ function Signup() {
           firstname: formData.firstName,
           lastname: formData.lastName,
         },
-        // phone: formData.phone, // Removed as phone data is not in the initial state
+        
       })
     })
     .then(res => res.json())

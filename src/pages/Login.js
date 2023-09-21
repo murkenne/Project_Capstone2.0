@@ -12,7 +12,7 @@ function Login({ onLoginSuccess }) {
 
   const navigate = useNavigate();
   const { setCart } = useContext(CartContext); 
-  const { setIsLoggedIn } = useContext(UserContext); // Get the setIsLoggedIn method from UserContext
+  const { setIsLoggedIn } = useContext(UserContext); 
 
   useEffect(() => {
     const fetchUserData = async () => {

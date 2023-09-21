@@ -4,12 +4,12 @@
   display: flex;
   flex-direction: row;
   justify-content: center;
-  position: fixed; /* Makes the header fixed at the top */
-  top: 0; /* Align it to the top */
-  left: 0; /* Align it to the left */
-  width: 100%; /* Makes the header full width */
-  box-shadow: 0px 4px 2px -2px gray; /* Adds a drop shadow */
-  z-index: 500; /* Ensures the header is above other elements */
+  position: fixed; 
+  top: 0; 
+  left: 0; 
+  width: 100%; 
+  box-shadow: 0px 4px 2px -2px gray; 
+  z-index: 500; 
 }
 
 .banner{
@@ -62,15 +62,15 @@
 }
 
 .store-brand:hover {
-  color: blue; /* Set the color of the text on hover */
+  color: blue; 
 }
 
 .store-brand:active {
-  color: red; /* Set the color of the text when active */
+  color: red; 
 }
 
 .store-brand:visited {
-  color: blue; /* Set the color of the text when visited */
+  color: blue; 
 }
 /* cool effect*/
 .store-brand-link {
@@ -80,8 +80,8 @@
 }
 
 .store-brand-link:hover {
-  transform: scale(1.05); /* Slightly enlarges the link on hover */
-  text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3); /* Adds a shadow to the text for a lifting effect */
+  transform: scale(1.05); 
+  text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3); 
 }
 
 .signup-link,
@@ -110,7 +110,7 @@
   background-color: blue; 
   border: none; 
   padding: 3px 8px; /* Reduced padding to make the button smaller */
-  margin-right: -20px; /* Negative margin to move the button to the right */
+  margin-right: -20px; 
   cursor: pointer;
   color: white; 
   font-weight: bold; 
