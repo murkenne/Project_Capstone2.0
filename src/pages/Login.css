@@ -1,0 +1,4 @@
+.login {
+    width: 20%; /* This sets the width to 70% of its parent container. Adjust as needed. */
+    margin: 0 auto; /* This will center the element horizontally if it's smaller than its parent container. */
+}

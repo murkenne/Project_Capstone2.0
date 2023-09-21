@@ -23,6 +23,19 @@
      transform: scale(1.1); /* Slightly enlarges the link on hover */
      text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3); /* Adds a shadow to the text for a lifting effect */
   }
+
+  .row-align .add-cart {
+    opacity: 0;
+    visibility: hidden;
+     transform: translateX(100%); /* push it off the right edge */
+    transition: opacity 0.3s ease, transform 0.3s ease; 
+}
+
+.row-align:hover .add-cart {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0)
+}
   /*.picture-container {
     width: 100%;
     height: 100%;
@@ -31,14 +44,20 @@
     align-items: center;
   }*/
   
-  /*.crop-picture {
+  .crop-picture {
     width: 200px;
     margin: 0 auto;
     display: flex;
     justify-content: center;
     align-items: center;
-  }*/
+    transition: transform 0.3s;
+  }
   
+   .crop-picture:hover {
+     transform: scale(1.1); /* Slightly enlarges the link on hover */
+     text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3); /* Adds a shadow to the text for a lifting effect */
+   }
+
   .burp {
     max-height: 160px;
     transition-duration: 300ms;
@@ -54,7 +73,6 @@
     right: 0;
     background-color: white;
     padding: 0.5rem; 
-    opacity: 0%;
   }
   .add-cart:hover {
     position: absolute;
@@ -62,17 +80,17 @@
     right: 0;
     background-color: white;
     padding: 0.5rem; 
-    opacity: 100%;
   }
 
   button.plus-btn {/* add to cart*/
      width: 2rem;
     height: 2rem;
     display: flex;
-    border-radius: 60%;
+    border-radius: 0;
     justify-content: center;
     align-items: center;
     cursor: pointer;
+    margin-bottom: 0.5rem;
     background-color: green;
     transition: background-color 0.3s ease; /* This will make the color transition smoother */
   }
@@ -82,11 +100,11 @@
   }
   
   .details { /* details button*/
-    width: 2rem;
+    width: 2.5rem;
     height: 2rem;
     text-decoration: none;
     background-color: purple; /* updated color */
-    border-radius: 50%;
+    border-radius: 0%;
     display: flex;
     justify-content: center;
     align-items: center;

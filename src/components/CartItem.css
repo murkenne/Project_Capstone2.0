@@ -77,12 +77,12 @@
 .reduce {
   display: flex;
   flex: 1;
-  max-width: 100px; /* This is a representation of blue-400 in Tailwind CSS by default, replace it with the exact color if different */
+  max-width: 100px; 
   align-items: center;
   height: 100%;
-  border: 1px solid; /* Added a 1px solid border, modify as needed */
-  color: var(--text-primary); /* Replace with the actual primary color code from your project */
-  font-weight: 500; /* Equivalent to font-medium in Tailwind CSS */
+  border: 1px solid; 
+  color: var(--text-primary); 
+  font-weight: 500; 
 }
 
 .reduce-button {/* minus button in cart items*/
@@ -128,3 +128,4 @@
   align-items: center; /* items-center */
   justify-content: space-around; /* justify-around */
 }
+

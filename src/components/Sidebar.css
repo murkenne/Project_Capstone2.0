@@ -137,4 +137,8 @@
     width: 100%; /* w-full */
     font-weight: 500; /* font-medium */
   }
-  
+ .checkout.disabled {
+    background-color: #ccc;  /* Grayed out */
+    cursor: not-allowed;     /* Shows a 'no entry' sign when hovered */
+}
+ 

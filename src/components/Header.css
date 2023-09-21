@@ -16,7 +16,7 @@
   display: flex;
 }
 .my-cart {/*cart logo header.js*/ 
-    color:blue;
+    color:red;
     font-size: 24px;
     cursor: pointer;
     transition: transform 0.3s;
