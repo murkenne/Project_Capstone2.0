@@ -1,66 +1,68 @@
 import React, { useState, useEffect, useContext } from 'react';
-import { CartContext } from '../contexts/CartContext'; 
+import { CartContext } from '../contexts/CartContext';
+import './Search.css'
 
 function Search() {
   const [categories, setCategories] = useState([]);
-  const [searchTerm, setSearchTerm] = useState('');
+  const [selectedCategory, setSelectedCategory] = useState(null);
   const [products, setProducts] = useState([]);
-  const [filteredProducts, setFilteredProducts] = useState([]); 
+  const [filteredProducts, setFilteredProducts] = useState([]);
   const { addToCart } = useContext(CartContext);
 
-  // Fetch categories on component mount
+
   useEffect(() => {
     fetch('https://fakestoreapi.com/products/categories')
       .then(res => res.json())
       .then(json => setCategories(json));
   }, []);
 
+ 
   useEffect(() => {
-    if(searchTerm.length >= 2) {
-      const filteredCategories = categories.filter(category => 
-        category.toLowerCase().includes(searchTerm.toLowerCase())
-      );
-      
-      if(filteredCategories.length > 0) {
-        fetch(`https://fakestoreapi.com/products/category/${filteredCategories[0]}`)
-          .then(res => res.json())
-          .then(json => setProducts(json));
-      } else {
-        setProducts([]);
-      }
-    } else {
-      setProducts([]);
+    if (selectedCategory) {
+      fetch(`https://fakestoreapi.com/products/category/${selectedCategory}`)
+        .then(res => res.json())
+        .then(json => setProducts(json));
     }
-  }, [searchTerm, categories]);
-
-  useEffect(() => {
-    if(searchTerm.length >= 2) {
-      // Filtering products based on the search term
-      setFilteredProducts(products.filter(product => 
-        product.title.toLowerCase().includes(searchTerm.toLowerCase())
-      ));
-    } else {
-      setFilteredProducts(products); 
-    }
-  }, [searchTerm, products]);
+  }, [selectedCategory]);
 
   return (
     <div className="Search">
       <input
+        className="search-input"
         type="text"
-        placeholder="Search men's/women's/jewelry/electronics categories..."
-        value={searchTerm}
-        onChange={(e) => setSearchTerm(e.target.value)}
+        placeholder="Search for products..."
+        onChange={(e) => setFilteredProducts(products.filter(product =>
+          product.title.toLowerCase().includes(e.target.value.toLowerCase())
+        ))}
       />
 
-      <ul className='search-list'>
-        {filteredProducts.map(product => ( // Using filteredProducts to display the products
+      <div className="category-bar">
+        <h3>Categories:</h3>
+        <ul className="category-list">
+          {categories.map((category, index) => (
+            <li key={index} className="category-item" onClick={() => setSelectedCategory(category)}>
+              {category}
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <ul className="search-list">
+        {filteredProducts.length > 0 ? filteredProducts.map(product => (
           <li key={product.id}>
             <h2>{product.title}</h2>
             <p>{product.description}</p>
             <img src={product.image} alt={product.title} width={100} />
             <p>${product.price}</p>
-            <button className='addToCartButton' onClick={() => addToCart(product, product.id)}>Add to Cart</button>
+            <button className="addToCartButton" onClick={() => addToCart(product, product.id)}>Add to Cart</button>
+          </li>
+        )) : products.map(product => (
+          <li key={product.id}>
+            <h2>{product.title}</h2>
+            <p>{product.description}</p>
+            <img src={product.image} alt={product.title} width={100} />
+            <p>${product.price}</p>
+            <button className="addToCartButton" onClick={() => addToCart(product, product.id)}>Add to Cart</button>
           </li>
         ))}
       </ul>
