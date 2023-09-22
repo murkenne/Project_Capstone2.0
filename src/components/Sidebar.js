@@ -38,7 +38,7 @@ const Sidebar = () => {
             </div>
             <div className='total-container'>
                 <div className='total-box'>
-                    <div className='total-bottom'><span className='spun'>Total:</span>$ {total}</div>
+                    <div className='total-bottom'><span className='spun'>Total:</span>$ {parseFloat(total).toFixed(2)}</div>
                     <div className='clear-cart'>
                         <button onClick={clearCart}>
                             <FontAwesomeIcon icon={faTrash} className='trashcan' />
