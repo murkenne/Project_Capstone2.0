@@ -11,6 +11,9 @@
   }
   
   .sidebar.open {
+    display: flex;
+    flex-direction: column;
+    /*background-color: blue;*/
     right: 0;
   }
   
@@ -21,6 +24,9 @@
   @media (min-width: 768px) {
     .sidebar {
       padding: 0 35px;
+    } 
+    .sidebar.open {
+     /* background-color: red;*/
     }
   }
   
@@ -43,19 +49,19 @@
     justify-content: space-between;
     padding-top: 6px;
     padding-bottom: 6px;
-    border-bottom: 1px solid #000; /* You can change the color as needed */
+    border-bottom: 1px solid #000;
   }
   
   .shopping-bag {
     text-transform: uppercase;
-    font-size: 0.875rem; /* Equivalent to text-sm in Tailwind CSS */
-    font-weight: 600; /* Equivalent to font-semibold in Tailwind CSS */
+    font-size: 0.875rem; 
+    font-weight: 600; 
   }
   
   .close-sidebar { /*sidebar.js*/
     cursor: pointer;
-    width: 2rem; /* Equivalent to w-8 in Tailwind CSS */
-    height: 2rem; /* Equivalent to h-8 in Tailwind CSS */
+    width: 2rem; 
+    height: 2rem; 
     display: flex;
     justify-content: center;
     align-items: center;
@@ -64,7 +70,7 @@
   
   .clear-cart button {/* sidebar.js*/
     cursor: pointer; /* cursor-pointer */
-    background-color: white; /* bg-red-500 (hex code may vary, confirm from your framework documentation) */
+    background-color: white; 
     color: black; /* text-white */
     }
   .trashcan { /*sidebar.js*/
@@ -74,28 +80,28 @@
   }
   
     .total-box { /*sidebar.js*/
-    display: flex; /* flex */
-    width: 100%; /* w-full */
-    justify-content: space-between; /* justify-between */
-    align-items: center; /* items-center */
+    display: flex; 
+    width: 100%; 
+    justify-content: space-between; 
+    align-items: center; 
   }
   
   .total-container { /* sidebar.js*/
     display: flex; /* flex */
-    flex-direction: column; /* flex-col */
-    gap: 0.75rem; /* gap-y-3 (assuming 1 unit equals 0.25rem, adjust if necessary) */
-    padding: 2rem 0; /* py-4 (assuming 1 unit equals 0.5rem, adjust if necessary) */
-    margin-top: 1rem; /* mt-4 (assuming 1 unit equals 0.25rem, adjust if necessary) */
+    flex-direction: column; 
+    gap: 0.75rem;
+    padding: 2rem 0; 
+    margin-top: 1rem; 
   }
   
   .total-bottom { /* sidebar.js*/
     padding: 0%;
-    text-transform: uppercase; /* uppercase */
-    font-weight: 600; /* font-semibold */
+    text-transform: uppercase; 
+    font-weight: 600; 
   }
   
   .spun { /* sidebar.js*/
-    margin-right: 0.5rem; /* mr-2 (assuming 1 unit equals 0.25rem, adjust if necessary) */
+    margin-right: 0.5rem; 
   }
   
   .cart-spectrum {/*sidebar.js*/
@@ -105,7 +111,7 @@
     height: 520px;
     overflow-y: auto;
     overflow-x: hidden;
-    border-bottom: 1px solid; /* Add your preferred color here */
+    border-bottom: 1px solid; 
   }
   
   @media (min-width: 1024px) {
@@ -115,31 +121,31 @@
   }
   
   .cart-view {
-    background-color: #f0f0f0; /* bg-gray-200 */
+    background-color: #f0f0f0; 
     text-decoration: none;
     display: flex;
-    padding: 0px; /* p-4 */
+    padding: 0px; 
     justify-content: center;
     align-items: center;
-    color: black; /* text-primary (assuming primary is black in your setup) */
-    width: 100%; /* w-full */
-    font-weight: 500; /* font-medium */
+    color: black; 
+    width: 100%; 
+    font-weight: 500; 
   }
   
   .checkout {
-    background-color: black; /* bg-gray-200 */
+    background-color: black;
     text-decoration: none;
     display: flex;
-    padding: 4px; /* p-4 */
+    padding: 4px; 
     justify-content: center;
     align-items: center;
-    color: white; /* text-primary (assuming primary is black in your setup) */
-    width: 100%; /* w-full */
-    font-weight: 500; /* font-medium */
+    color: white; 
+    width: 100%; 
+    font-weight: 500; 
   }
-  
+
  .checkout.disabled {
-    background-color: #ccc;  /* Grayed out */
-    cursor: not-allowed;     /* Shows a 'no entry' sign when hovered */
+    background-color: #ccc;  
+    cursor: not-allowed;     
 }
  
