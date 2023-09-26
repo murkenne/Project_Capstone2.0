@@ -37,7 +37,7 @@ const App = () => {
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/product/:id' element={<ProductDetails />} />
-          <Route path='/checkout' element={<Checkout />} />  // Added this route
+          <Route path='/checkout' element={<Checkout />} />  
           <Route path="/login" element={<Login onLoginSuccess={handleLoginSuccess} />} />
           <Route path='/signup' element={<Signup />} />
         </Routes>
